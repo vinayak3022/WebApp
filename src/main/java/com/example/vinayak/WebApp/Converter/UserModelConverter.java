@@ -12,23 +12,21 @@ import java.util.List;
 public class UserModelConverter implements Converter<UserEntity, UserModel> {
     @Override
     public UserEntity convertModelToEntity(UserModel model) {
-        UserEntity userEntity = new UserEntity().builder()
-                .name(model.getName())
-                .email(model.getEmail())
-                .phone(model.getPhone())
-                .build();
+        UserEntity userEntity = new UserEntity();
+        userEntity.setName(model.getName());
+        userEntity.setEmail(model.getEmail());
+        userEntity.setPhone(model.getPhone());
         userEntity.setId(model.getId());
         return userEntity;
     }
 
     @Override
     public UserModel convertEntityToModel(UserEntity entity) {
-        UserModel userModel = UserModel.builder()
-                .id(entity.getId())
-                .name(entity.getName())
-                .email(entity.getEmail())
-                .phone(entity.getPhone())
-                .build();
+        UserModel userModel = new UserModel();
+        userModel.setId(entity.getId());
+        userModel.setName(entity.getName());
+        userModel.setEmail(entity.getEmail());
+        userModel.setPhone(entity.getPhone());
 
         return userModel;
     }
