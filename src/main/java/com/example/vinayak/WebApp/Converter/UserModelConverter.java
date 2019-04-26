@@ -33,11 +33,11 @@ public class UserModelConverter implements Converter<UserEntity, UserModel> {
 
     @Override
     public Collection<UserEntity> convertModelToEntity(Collection<UserModel> modelList) {
-        List<UserEntity> vehicleEntityList = new ArrayList<>();
+        List<UserEntity> userEntityList = new ArrayList<>();
         for (UserModel modelDto : modelList) {
-            vehicleEntityList.add(convertModelToEntity(modelDto));
+            userEntityList.add(convertModelToEntity(modelDto));
         }
-        return vehicleEntityList;
+        return userEntityList;
     }
 
     @Override
